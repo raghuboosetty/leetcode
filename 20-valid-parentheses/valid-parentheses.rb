@@ -1,22 +1,22 @@
 # @param {String} s
 # @return {Boolean}
 def is_valid(s)
-    arr = []
+    brackets = []
     params = { '{' => '}', '(' => ')', '[' => ']'}
-    last_param = nil
+    last_open_bracket = nil
     s.split('').each do |p|
         if params.keys.include?(p)
-            arr.push(p) 
-            last_param = p
+            last_open_bracket = p
+            brackets.push(p)
         end
         if params.values.include?(p)
-            if params[last_param].eql?(p)
-                arr.pop
-                last_param = arr.last
+            if params[last_open_bracket].eql?(p)
+                 brackets.pop
+                 last_open_bracket = brackets.last
             else
                 return false
             end
         end
     end
-    arr.size.zero?
+    brackets.empty?
 end
