@@ -5,11 +5,11 @@ def is_valid(s)
     params = { '{' => '}', '(' => ')', '[' => ']'}
     last_param = nil
     s.split('').each do |p|
-        if ['{', '(', '['].include?(p)
+        if params.keys.include?(p)
             arr.push(p) 
             last_param = p
         end
-        if ['}', ')', ']'].include?(p)
+        if params.values.include?(p)
             if params[last_param].eql?(p)
                 arr.pop
                 last_param = arr.last
