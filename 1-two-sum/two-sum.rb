@@ -16,21 +16,21 @@ def two_sum(nums, target)
     # end
 
     ## O(n)
-#     nums.each_with_index do |num_1, index_1|
-#         num_2 = target - num_1
-#         index_2 = nums.index(num_2)
-#         indexes.push(index_1, index_2) if !index_2.nil? && (index_2 >= 0) && (index_1 != index_2)
-#         break if indexes.size.eql?(2)
-#     end
-#   indexes
-
-     hash = {}
-    nums.each_with_index do |number, index|
-        if hash[target - number]
-            return [hash[target - number], index]
-        else
-            hash[number] = index
-        end
+    nums.each_with_index do |num_1, index_1|
+        num_2 = target - num_1
+        index_2 = nums.index(num_2)
+        indexes.push(index_1, index_2) if !index_2.nil? && (index_2 >= 0) && (index_1 != index_2)
+        break if indexes.size.eql?(2)
     end
+  indexes
+
+    #  hash = {}
+    # nums.each_with_index do |number, index|
+    #     if hash[target - number]
+    #         return [hash[target - number], index]
+    #     else
+    #         hash[number] = index
+    #     end
+    # end
 
 end
