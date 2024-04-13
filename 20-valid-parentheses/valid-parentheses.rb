@@ -4,7 +4,7 @@ def is_valid(s)
     brackets = []
     params = { '{' => '}', '(' => ')', '[' => ']'}
     last_open_bracket = nil
-    s.split('').each do |p|
+    s.chars.each do |p|
         if params.keys.include?(p)
             last_open_bracket = p
             brackets.push(p)
