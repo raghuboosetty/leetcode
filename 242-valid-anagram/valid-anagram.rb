@@ -16,5 +16,8 @@ def is_anagram(s, t)
     # s.chars.sort.join == t.chars.sort.join
 
     # another approach from solutions not sure if it's O(n)
-    s.chars.tally == t.chars.tally
+    # s.chars.tally == t.chars.tally
+
+    # O(n)
+    s.each_byte.tally == t.each_byte.tally
 end
