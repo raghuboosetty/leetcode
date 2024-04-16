@@ -2,6 +2,7 @@
 # @param {String} t
 # @return {Boolean}
 def is_anagram(s, t)
+    # Navie approach - O(n^n)
     # return false if s.size != t.size
     # s = s.chars
     # t = t.chars
@@ -11,5 +12,6 @@ def is_anagram(s, t)
     # end
     # t.size.zero?
 
+    # better approach - O(n^2)
     s.chars.sort.join == t.chars.sort.join
 end
