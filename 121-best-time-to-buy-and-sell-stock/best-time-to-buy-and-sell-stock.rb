@@ -1,11 +1,7 @@
 # @param {Integer[]} prices
 # @return {Integer}
 def max_profit(prices)
-    # min = prices.min
-    # prices = prices.slice_after(min).to_a[1]
-    # max = prices ? prices.max : nil
-    # (!max.nil? && !min.nil?) && (max > min) ? max - min : 0
-
+    # O(n^2) - timeout error
     # profit = 0
     # prices.each_with_index do |buy, buy_index|
     #     (prices[buy_index+1..-1]).each do |sell|
@@ -15,6 +11,7 @@ def max_profit(prices)
     # end
     # profit
 
+    # O(n)
     buy = prices[0]
     profit = 0
     prices.each do |sell|
@@ -23,7 +20,6 @@ def max_profit(prices)
         else
             profit = [profit, (sell - buy)].max
         end
-
     end
     profit
 end
