@@ -17,7 +17,7 @@ def max_profit(prices)
     prices.each do |sell|
         if sell < buy
             buy = sell
-        elsif (sell - buy) > profit
+        elsif sell - buy > profit
             profit = sell - buy
         end
     end
