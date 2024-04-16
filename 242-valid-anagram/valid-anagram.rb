@@ -13,5 +13,7 @@ def is_anagram(s, t)
     # t.size.zero?
 
     # better approach - O(n^2)
-    s.chars.sort.join == t.chars.sort.join
+    # s.chars.sort.join == t.chars.sort.join
+
+    s.chars.tally == t.chars.tally
 end
